@@ -26,7 +26,7 @@ class TrackYourPotteryViewController: UIViewController {
         """
         titleLabel.backgroundColor = UIColor(Color("PastelGreen"))
         titleLabel.textColor = .black
-        titleLabel.font = UIFont(name: "Chalkduster", size: 30)
+        titleLabel.font = UIFont(name: "Helvetica Light", size: 30)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
         

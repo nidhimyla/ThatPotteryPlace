@@ -54,7 +54,8 @@ class MenuViewController: UIViewController {
         ourServices.backgroundColor = pastelPink
         ourServices.layer.cornerRadius = 35
         ourServices.setTitle("Our Services", for: .normal)
-        ourServices.titleLabel?.font = UIFont(name: "Chalkduster", size: 50)
+        ourServices.titleLabel?.font = UIFont(name: "Helvetica Light", size: 50)
+        ourServices.setTitleColor(.black, for: .normal)
         ourServices.layer.borderWidth = 1
         ourServices.addTarget(self, action: #selector(selectOurServices), for: .touchUpInside)
         ourServices.translatesAutoresizingMaskIntoConstraints = false
@@ -64,7 +65,8 @@ class MenuViewController: UIViewController {
         trackYourPottery.backgroundColor = pastelGreen
         trackYourPottery.layer.cornerRadius = 35
         trackYourPottery.setTitle("Track Your Pottery", for: .normal)
-        trackYourPottery.titleLabel?.font = UIFont(name: "Chalkduster", size: 32)
+        trackYourPottery.titleLabel?.font = UIFont(name: "Helvetica Light", size: 35)
+        trackYourPottery.setTitleColor(.black, for: .normal)
         trackYourPottery.layer.borderWidth = 1
         trackYourPottery.addTarget(self, action: #selector(selectTrackYourPottery), for: .touchUpInside)
         trackYourPottery.translatesAutoresizingMaskIntoConstraints = false
@@ -73,8 +75,15 @@ class MenuViewController: UIViewController {
         let pastelBlue = UIColor(Color("PastelBlue"))
         bookAnAppointment.backgroundColor = pastelBlue
         bookAnAppointment.layer.cornerRadius = 35
-        bookAnAppointment.setTitle("Book an Appointment", for: .normal)
-        bookAnAppointment.titleLabel?.font = UIFont(name: "Chalkduster", size: 29)
+        var title = """
+        Book an
+        Appointment
+        """
+        bookAnAppointment.titleLabel?.numberOfLines = 0
+        bookAnAppointment.titleLabel?.textAlignment = .center
+        bookAnAppointment.setTitle(title, for: .normal)
+        bookAnAppointment.titleLabel?.font = UIFont(name: "Helvetica Light", size: 45)
+        bookAnAppointment.setTitleColor(.black, for: .normal)
         bookAnAppointment.layer.borderWidth = 1
         bookAnAppointment.addTarget(self, action: #selector(selectBookAnAppointment), for: .touchUpInside)
         bookAnAppointment.translatesAutoresizingMaskIntoConstraints = false

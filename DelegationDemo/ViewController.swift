@@ -25,14 +25,13 @@ class ViewController: UIViewController {
         view.addSubview(logo)
         
         welcomeLabel.text = "Welcome!"
-        welcomeLabel.font = UIFont(name: "Chalkduster", size: 60)
+        welcomeLabel.font = UIFont(name: "Helvetica Light", size: 60)
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(welcomeLabel)
         
         
         getStarted.text = "Click below to get started."
-        getStarted.font = UIFont(name: "Chalkduster", size: 60)
-        getStarted.font = getStarted.font.withSize(20)
+        getStarted.font = UIFont(name: "Helvetica Light", size: 20)
         getStarted.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(getStarted)
         
