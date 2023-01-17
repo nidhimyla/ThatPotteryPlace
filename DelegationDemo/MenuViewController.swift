@@ -9,15 +9,15 @@ import UIKit
 import SwiftUI
 import MapKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController{
 
     var phone = UIButton()
     var location = UIButton()
+    var welcome = UILabel()
     var paintbrush = UIButton()
-    var camera = UIButton()
     var ourServices = UIButton()
     var yourCart = UIButton()
-    var bookAnAppointment = UIButton()
+    var gallery = UIButton()
     var instagram = UIButton()
     var tiktok = UIButton()
     var facebook = UIButton()
@@ -42,13 +42,16 @@ class MenuViewController: UIViewController {
         
         let paintbrushPic = UIImage(named: "paintbrush")
         paintbrush.setImage(paintbrushPic, for: .normal)
+        paintbrush.addTarget(self, action: #selector(selectPaintbrush), for: .touchUpInside)
         paintbrush.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(paintbrush)
         
-        let cameraPic = UIImage(named: "camera")
-        camera.setImage(cameraPic, for: .normal)
-        camera.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(camera)
+        welcome.text = "Welcome!"
+        welcome.font = UIFont(name: "Helvetica Light", size: 60)
+        welcome.adjustsFontSizeToFitWidth = true
+        welcome.textAlignment = .center
+        welcome.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(welcome)
         
         let pastelPink = UIColor(Color("PastelPink"))
         ourServices.backgroundColor = pastelPink
@@ -61,8 +64,8 @@ class MenuViewController: UIViewController {
         ourServices.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(ourServices)
         
-        let pastelGreen = UIColor(Color("PastelGreen"))
-        yourCart.backgroundColor = pastelGreen
+        let pastelBlue = UIColor(Color("PastelBlue"))
+        yourCart.backgroundColor = pastelBlue
         yourCart.layer.cornerRadius = 35
         yourCart.setTitle("Your Cart", for: .normal)
         yourCart.titleLabel?.font = UIFont(name: "Helvetica Light", size: 42)
@@ -72,22 +75,15 @@ class MenuViewController: UIViewController {
         yourCart.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(yourCart)
         
-        let pastelBlue = UIColor(Color("PastelBlue"))
-        bookAnAppointment.backgroundColor = pastelBlue
-        bookAnAppointment.layer.cornerRadius = 35
-        let title = """
-        Book an
-        Appointment
-        """
-        bookAnAppointment.titleLabel?.numberOfLines = 0
-        bookAnAppointment.titleLabel?.textAlignment = .center
-        bookAnAppointment.setTitle(title, for: .normal)
-        bookAnAppointment.titleLabel?.font = UIFont(name: "Helvetica Light", size: 45)
-        bookAnAppointment.setTitleColor(.black, for: .normal)
-        bookAnAppointment.layer.borderWidth = 1
-        bookAnAppointment.addTarget(self, action: #selector(selectBookAnAppointment), for: .touchUpInside)
-        bookAnAppointment.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bookAnAppointment)
+        let pastelGreen = UIColor(Color("PastelGreen"))
+        gallery.backgroundColor = pastelGreen
+        gallery.layer.cornerRadius = 35
+        gallery.setTitle("Gallery", for: .normal)
+        gallery.titleLabel?.font = UIFont(name: "Helvetica Light", size: 42)
+        gallery.setTitleColor(.black, for: .normal)
+        gallery.layer.borderWidth = 1
+        gallery.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(gallery)
         
         let instagramIcon = UIImage(named: "instagram")
         instagram.setBackgroundImage(instagramIcon, for: .normal)
@@ -109,7 +105,6 @@ class MenuViewController: UIViewController {
         
         setupConstraints()
     }
-    
     func setupConstraints(){
         
         NSLayoutConstraint.activate([
@@ -133,42 +128,43 @@ class MenuViewController: UIViewController {
             paintbrush.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
         ])
         
+        
         NSLayoutConstraint.activate([
-            camera.trailingAnchor.constraint(equalTo: paintbrush.leadingAnchor, constant: -10),
-            camera.widthAnchor.constraint(equalToConstant: 40),
-            camera.heightAnchor.constraint(equalToConstant: 40),
-            camera.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            welcome.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            welcome.topAnchor.constraint(equalTo: paintbrush.bottomAnchor, constant: 15),
+            welcome.heightAnchor.constraint(equalToConstant: 100),
+            welcome.widthAnchor.constraint(equalTo: ourServices.widthAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            ourServices.topAnchor.constraint(equalTo: phone.bottomAnchor, constant: 20),
+            ourServices.topAnchor.constraint(equalTo: welcome.bottomAnchor, constant: 15),
             ourServices.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             ourServices.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             ourServices.heightAnchor.constraint(equalToConstant: 125)
         ])
         
         NSLayoutConstraint.activate([
-            bookAnAppointment.topAnchor.constraint(equalTo: ourServices.bottomAnchor, constant: 20),
-            bookAnAppointment.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            bookAnAppointment.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            bookAnAppointment.heightAnchor.constraint(equalToConstant: 125)
-        ])
-        
-        NSLayoutConstraint.activate([
-            yourCart.topAnchor.constraint(equalTo: bookAnAppointment.bottomAnchor, constant: 20),
+            yourCart.topAnchor.constraint(equalTo: ourServices.bottomAnchor, constant: 20),
             yourCart.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             yourCart.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             yourCart.heightAnchor.constraint(equalToConstant: 125)
         ])
         
         NSLayoutConstraint.activate([
-            instagram.topAnchor.constraint(equalTo: yourCart.bottomAnchor, constant: 40),
+            gallery.topAnchor.constraint(equalTo: yourCart.bottomAnchor, constant: 20),
+            gallery.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            gallery.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            gallery.heightAnchor.constraint(equalToConstant: 125)
+        ])
+        
+        NSLayoutConstraint.activate([
+            instagram.topAnchor.constraint(equalTo: gallery.bottomAnchor, constant: 40),
             instagram.widthAnchor.constraint(equalToConstant: 75),
             instagram.heightAnchor.constraint(equalToConstant: 75)
         ])
         
         NSLayoutConstraint.activate([
-            tiktok.topAnchor.constraint(equalTo: yourCart.bottomAnchor, constant: 40),
+            tiktok.topAnchor.constraint(equalTo: gallery.bottomAnchor, constant: 30),
             tiktok.leadingAnchor.constraint(equalTo: instagram.trailingAnchor, constant: 10),
             tiktok.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             tiktok.widthAnchor.constraint(equalToConstant: 75),
@@ -176,7 +172,7 @@ class MenuViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            facebook.topAnchor.constraint(equalTo: yourCart.bottomAnchor, constant: 40),
+            facebook.topAnchor.constraint(equalTo: gallery.bottomAnchor, constant: 40),
             facebook.leadingAnchor.constraint(equalTo: tiktok.trailingAnchor, constant: 10),
             facebook.widthAnchor.constraint(equalToConstant: 75),
             facebook.heightAnchor.constraint(equalToConstant: 75)
@@ -186,11 +182,13 @@ class MenuViewController: UIViewController {
     @objc
     func selectPhone(){
         let callMessage = UIAlertController(title: "Call That Pottery Place?", message: "", preferredStyle: .alert)
-        let call = UIAlertAction(title: "123-456-7890", style: .default, handler: {(action) -> Void in
+        let call = UIAlertAction(title: "(609) 716-6200", style: .default, handler: {(action) -> Void in
             print("Calling")
         })
         callMessage.addAction(call)
-        
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: {(action) -> Void in
+        })
+        callMessage.addAction(cancel)
         self.present(callMessage, animated: true, completion: nil)
     }
     
@@ -205,7 +203,8 @@ class MenuViewController: UIViewController {
             self.openGoogleMap()
         })
         mapMessage.addAction(googleMap)
-        
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: {(action) -> Void in})
+        mapMessage.addAction(cancel)
         self.present(mapMessage, animated: true, completion: nil)
     }
     
@@ -218,13 +217,13 @@ class MenuViewController: UIViewController {
     }
     
     @objc
-    func selectOurServices(){
-        navigationController?.pushViewController(ServicesViewController(), animated: true)
+    func selectPaintbrush(){
+        present(AboutViewController(), animated: true)
     }
     
     @objc
-    func selectBookAnAppointment(){
-        present(BookAnAppointmentViewController(), animated: true)
+    func selectOurServices(){
+        navigationController?.pushViewController(ServicesViewController(), animated: true)
     }
     
     @objc

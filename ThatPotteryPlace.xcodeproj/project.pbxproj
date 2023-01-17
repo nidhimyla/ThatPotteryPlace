@@ -17,6 +17,10 @@
 		74117A022971D54300075EB3 /* BookAnAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74117A012971D54300075EB3 /* BookAnAppointmentViewController.swift */; };
 		744A2C4D2973604100950CB5 /* SpecificServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744A2C4C2973604100950CB5 /* SpecificServiceViewController.swift */; };
 		744A2C4F2975ED7E00950CB5 /* YourCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744A2C4E2975ED7E00950CB5 /* YourCartViewController.swift */; };
+		744A2C512976542400950CB5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744A2C502976542400950CB5 /* ProfileViewController.swift */; };
+		744A2C5329773CD100950CB5 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744A2C5229773CD100950CB5 /* Appointment.swift */; };
+		744A2C552977405200950CB5 /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744A2C542977405200950CB5 /* AppointmentTableViewCell.swift */; };
+		744A2C572977607100950CB5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744A2C562977607100950CB5 /* AboutViewController.swift */; };
 		7463EB2B29725737008C00A9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7463EB2A29725737008C00A9 /* Service.swift */; };
 		7463EB2D29725F4C008C00A9 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7463EB2C29725F4C008C00A9 /* ServiceTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +38,10 @@
 		74117A012971D54300075EB3 /* BookAnAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAnAppointmentViewController.swift; sourceTree = "<group>"; };
 		744A2C4C2973604100950CB5 /* SpecificServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificServiceViewController.swift; sourceTree = "<group>"; };
 		744A2C4E2975ED7E00950CB5 /* YourCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCartViewController.swift; sourceTree = "<group>"; };
+		744A2C502976542400950CB5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		744A2C5229773CD100950CB5 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		744A2C542977405200950CB5 /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		744A2C562977607100950CB5 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		7463EB2A29725737008C00A9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		7463EB2C29725F4C008C00A9 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,11 +80,15 @@
 				2D0921DE28ECF16D00832E0B /* SceneDelegate.swift */,
 				2D0921E028ECF16D00832E0B /* ViewController.swift */,
 				741179FB2970C5F000075EB3 /* MenuViewController.swift */,
+				744A2C562977607100950CB5 /* AboutViewController.swift */,
+				744A2C502976542400950CB5 /* ProfileViewController.swift */,
 				744A2C4E2975ED7E00950CB5 /* YourCartViewController.swift */,
 				74117A012971D54300075EB3 /* BookAnAppointmentViewController.swift */,
 				7463EB2A29725737008C00A9 /* Service.swift */,
 				741179FD2970EE1500075EB3 /* ServicesViewController.swift */,
+				744A2C5229773CD100950CB5 /* Appointment.swift */,
 				7463EB2C29725F4C008C00A9 /* ServiceTableViewCell.swift */,
+				744A2C542977405200950CB5 /* AppointmentTableViewCell.swift */,
 				744A2C4C2973604100950CB5 /* SpecificServiceViewController.swift */,
 				2D0921E528ECF17100832E0B /* Assets.xcassets */,
 				2D0921E728ECF17100832E0B /* LaunchScreen.storyboard */,
@@ -158,10 +170,14 @@
 				2D0921E128ECF16D00832E0B /* ViewController.swift in Sources */,
 				7463EB2B29725737008C00A9 /* Service.swift in Sources */,
 				74117A022971D54300075EB3 /* BookAnAppointmentViewController.swift in Sources */,
+				744A2C5329773CD100950CB5 /* Appointment.swift in Sources */,
+				744A2C552977405200950CB5 /* AppointmentTableViewCell.swift in Sources */,
 				744A2C4F2975ED7E00950CB5 /* YourCartViewController.swift in Sources */,
 				2D0921DD28ECF16D00832E0B /* AppDelegate.swift in Sources */,
 				2D0921DF28ECF16D00832E0B /* SceneDelegate.swift in Sources */,
+				744A2C512976542400950CB5 /* ProfileViewController.swift in Sources */,
 				744A2C4D2973604100950CB5 /* SpecificServiceViewController.swift in Sources */,
+				744A2C572977607100950CB5 /* AboutViewController.swift in Sources */,
 				741179FE2970EE1500075EB3 /* ServicesViewController.swift in Sources */,
 				7463EB2D29725F4C008C00A9 /* ServiceTableViewCell.swift in Sources */,
 				741179FC2970C5F000075EB3 /* MenuViewController.swift in Sources */,
