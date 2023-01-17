@@ -1,14 +1,14 @@
 //
-//  TrackYourPotteryViewController.swift
+//  YourCartViewController.swift
 //  DelegationDemo
 //
-//  Created by Nidhi Mylavarapu on 1/13/23.
+//  Created by Nidhi Mylavarapu on 1/16/23.
 //
 
 import UIKit
 import SwiftUI
 
-class TrackYourPotteryViewController: UIViewController {
+class YourCartViewController: UIViewController {
 
     var titleLabel = UILabel()
     
@@ -22,7 +22,7 @@ class TrackYourPotteryViewController: UIViewController {
         
         
         
-         Track Your Pottery
+         Your Cart
         """
         titleLabel.backgroundColor = UIColor(Color("PastelGreen"))
         titleLabel.textColor = .black
@@ -44,3 +44,4 @@ class TrackYourPotteryViewController: UIViewController {
         ])
     }
 }
+

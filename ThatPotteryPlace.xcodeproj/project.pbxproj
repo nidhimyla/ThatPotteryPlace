@@ -15,7 +15,8 @@
 		741179FC2970C5F000075EB3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741179FB2970C5F000075EB3 /* MenuViewController.swift */; };
 		741179FE2970EE1500075EB3 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741179FD2970EE1500075EB3 /* ServicesViewController.swift */; };
 		74117A022971D54300075EB3 /* BookAnAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74117A012971D54300075EB3 /* BookAnAppointmentViewController.swift */; };
-		74117A042971F72400075EB3 /* TrackYourPotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74117A032971F72400075EB3 /* TrackYourPotteryViewController.swift */; };
+		744A2C4D2973604100950CB5 /* SpecificServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744A2C4C2973604100950CB5 /* SpecificServiceViewController.swift */; };
+		744A2C4F2975ED7E00950CB5 /* YourCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744A2C4E2975ED7E00950CB5 /* YourCartViewController.swift */; };
 		7463EB2B29725737008C00A9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7463EB2A29725737008C00A9 /* Service.swift */; };
 		7463EB2D29725F4C008C00A9 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7463EB2C29725F4C008C00A9 /* ServiceTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +32,8 @@
 		741179FB2970C5F000075EB3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		741179FD2970EE1500075EB3 /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		74117A012971D54300075EB3 /* BookAnAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAnAppointmentViewController.swift; sourceTree = "<group>"; };
-		74117A032971F72400075EB3 /* TrackYourPotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackYourPotteryViewController.swift; sourceTree = "<group>"; };
+		744A2C4C2973604100950CB5 /* SpecificServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificServiceViewController.swift; sourceTree = "<group>"; };
+		744A2C4E2975ED7E00950CB5 /* YourCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCartViewController.swift; sourceTree = "<group>"; };
 		7463EB2A29725737008C00A9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		7463EB2C29725F4C008C00A9 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,11 +72,12 @@
 				2D0921DE28ECF16D00832E0B /* SceneDelegate.swift */,
 				2D0921E028ECF16D00832E0B /* ViewController.swift */,
 				741179FB2970C5F000075EB3 /* MenuViewController.swift */,
-				74117A032971F72400075EB3 /* TrackYourPotteryViewController.swift */,
+				744A2C4E2975ED7E00950CB5 /* YourCartViewController.swift */,
 				74117A012971D54300075EB3 /* BookAnAppointmentViewController.swift */,
 				7463EB2A29725737008C00A9 /* Service.swift */,
 				741179FD2970EE1500075EB3 /* ServicesViewController.swift */,
 				7463EB2C29725F4C008C00A9 /* ServiceTableViewCell.swift */,
+				744A2C4C2973604100950CB5 /* SpecificServiceViewController.swift */,
 				2D0921E528ECF17100832E0B /* Assets.xcassets */,
 				2D0921E728ECF17100832E0B /* LaunchScreen.storyboard */,
 				2D0921EA28ECF17100832E0B /* Info.plist */,
@@ -117,7 +120,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2D0921D428ECF16D00832E0B /* Build configuration list for PBXProject "DelegationDemo" */;
+			buildConfigurationList = 2D0921D428ECF16D00832E0B /* Build configuration list for PBXProject "ThatPotteryPlace" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -155,9 +158,10 @@
 				2D0921E128ECF16D00832E0B /* ViewController.swift in Sources */,
 				7463EB2B29725737008C00A9 /* Service.swift in Sources */,
 				74117A022971D54300075EB3 /* BookAnAppointmentViewController.swift in Sources */,
+				744A2C4F2975ED7E00950CB5 /* YourCartViewController.swift in Sources */,
 				2D0921DD28ECF16D00832E0B /* AppDelegate.swift in Sources */,
-				74117A042971F72400075EB3 /* TrackYourPotteryViewController.swift in Sources */,
 				2D0921DF28ECF16D00832E0B /* SceneDelegate.swift in Sources */,
+				744A2C4D2973604100950CB5 /* SpecificServiceViewController.swift in Sources */,
 				741179FE2970EE1500075EB3 /* ServicesViewController.swift in Sources */,
 				7463EB2D29725F4C008C00A9 /* ServiceTableViewCell.swift in Sources */,
 				741179FC2970C5F000075EB3 /* MenuViewController.swift in Sources */,
@@ -353,7 +357,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D0921D428ECF16D00832E0B /* Build configuration list for PBXProject "DelegationDemo" */ = {
+		2D0921D428ECF16D00832E0B /* Build configuration list for PBXProject "ThatPotteryPlace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D0921EB28ECF17100832E0B /* Debug */,

@@ -16,7 +16,7 @@ class MenuViewController: UIViewController {
     var paintbrush = UIButton()
     var camera = UIButton()
     var ourServices = UIButton()
-    var trackYourPottery = UIButton()
+    var yourCart = UIButton()
     var bookAnAppointment = UIButton()
     var instagram = UIButton()
     var tiktok = UIButton()
@@ -62,20 +62,20 @@ class MenuViewController: UIViewController {
         view.addSubview(ourServices)
         
         let pastelGreen = UIColor(Color("PastelGreen"))
-        trackYourPottery.backgroundColor = pastelGreen
-        trackYourPottery.layer.cornerRadius = 35
-        trackYourPottery.setTitle("Track Your Pottery", for: .normal)
-        trackYourPottery.titleLabel?.font = UIFont(name: "Helvetica Light", size: 35)
-        trackYourPottery.setTitleColor(.black, for: .normal)
-        trackYourPottery.layer.borderWidth = 1
-        trackYourPottery.addTarget(self, action: #selector(selectTrackYourPottery), for: .touchUpInside)
-        trackYourPottery.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(trackYourPottery)
+        yourCart.backgroundColor = pastelGreen
+        yourCart.layer.cornerRadius = 35
+        yourCart.setTitle("Your Cart", for: .normal)
+        yourCart.titleLabel?.font = UIFont(name: "Helvetica Light", size: 42)
+        yourCart.setTitleColor(.black, for: .normal)
+        yourCart.layer.borderWidth = 1
+        yourCart.addTarget(self, action: #selector(selectYourCart), for: .touchUpInside)
+        yourCart.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(yourCart)
         
         let pastelBlue = UIColor(Color("PastelBlue"))
         bookAnAppointment.backgroundColor = pastelBlue
         bookAnAppointment.layer.cornerRadius = 35
-        var title = """
+        let title = """
         Book an
         Appointment
         """
@@ -155,20 +155,20 @@ class MenuViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            trackYourPottery.topAnchor.constraint(equalTo: bookAnAppointment.bottomAnchor, constant: 20),
-            trackYourPottery.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            trackYourPottery.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            trackYourPottery.heightAnchor.constraint(equalToConstant: 125)
+            yourCart.topAnchor.constraint(equalTo: bookAnAppointment.bottomAnchor, constant: 20),
+            yourCart.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            yourCart.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            yourCart.heightAnchor.constraint(equalToConstant: 125)
         ])
         
         NSLayoutConstraint.activate([
-            instagram.topAnchor.constraint(equalTo: trackYourPottery.bottomAnchor, constant: 40),
+            instagram.topAnchor.constraint(equalTo: yourCart.bottomAnchor, constant: 40),
             instagram.widthAnchor.constraint(equalToConstant: 75),
             instagram.heightAnchor.constraint(equalToConstant: 75)
         ])
         
         NSLayoutConstraint.activate([
-            tiktok.topAnchor.constraint(equalTo: trackYourPottery.bottomAnchor, constant: 40),
+            tiktok.topAnchor.constraint(equalTo: yourCart.bottomAnchor, constant: 40),
             tiktok.leadingAnchor.constraint(equalTo: instagram.trailingAnchor, constant: 10),
             tiktok.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             tiktok.widthAnchor.constraint(equalToConstant: 75),
@@ -176,7 +176,7 @@ class MenuViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            facebook.topAnchor.constraint(equalTo: trackYourPottery.bottomAnchor, constant: 40),
+            facebook.topAnchor.constraint(equalTo: yourCart.bottomAnchor, constant: 40),
             facebook.leadingAnchor.constraint(equalTo: tiktok.trailingAnchor, constant: 10),
             facebook.widthAnchor.constraint(equalToConstant: 75),
             facebook.heightAnchor.constraint(equalToConstant: 75)
@@ -185,7 +185,7 @@ class MenuViewController: UIViewController {
     
     @objc
     func selectPhone(){
-        var callMessage = UIAlertController(title: "Call That Pottery Place?", message: "", preferredStyle: .alert)
+        let callMessage = UIAlertController(title: "Call That Pottery Place?", message: "", preferredStyle: .alert)
         let call = UIAlertAction(title: "123-456-7890", style: .default, handler: {(action) -> Void in
             print("Calling")
         })
@@ -196,7 +196,7 @@ class MenuViewController: UIViewController {
     
     @objc
     func selectLocation(){
-        var mapMessage = UIAlertController(title: "Directions to That Pottery Place", message: "Select an option below", preferredStyle: .alert)
+        let mapMessage = UIAlertController(title: "Directions to That Pottery Place", message: "Select an option below", preferredStyle: .alert)
         let appleMap = UIAlertAction(title: "Apple Maps", style: .default, handler: {(action) -> Void in
             self.openAppleMap()
         })
@@ -224,12 +224,12 @@ class MenuViewController: UIViewController {
     
     @objc
     func selectBookAnAppointment(){
-        navigationController?.pushViewController(BookAnAppointmentViewController(), animated: true)
+        present(BookAnAppointmentViewController(), animated: true)
     }
     
     @objc
-    func selectTrackYourPottery(){
-        navigationController?.pushViewController(TrackYourPotteryViewController(), animated: true)
+    func selectYourCart(){
+        navigationController?.pushViewController(YourCartViewController(), animated: true)
     }
     
     @objc

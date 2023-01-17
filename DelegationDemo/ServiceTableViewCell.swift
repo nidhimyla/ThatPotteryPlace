@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SwiftUI
 
-class ServiceTableViewCell: UITableViewCell {
+class ServiceTableViewCell: UITableViewCell{
     
     let serviceImageView = UIImageView()
     let serviceLabel = UILabel()
@@ -16,27 +17,40 @@ class ServiceTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         serviceImageView.translatesAutoresizingMaskIntoConstraints = false
+        serviceImageView.layer.masksToBounds = true
+        serviceImageView.layer.cornerRadius = 50
         contentView.addSubview(serviceImageView)
         
         serviceLabel.translatesAutoresizingMaskIntoConstraints = false
+        serviceLabel.font = UIFont(name: "Helvetica Light", size: 25)
+        serviceLabel.backgroundColor = UIColor(Color("PastelPink"))
+        serviceLabel.layer.masksToBounds = true
+        serviceLabel.layer.cornerRadius = 10
+        serviceLabel.textColor = .black
         contentView.addSubview(serviceLabel)
         
         setupConstraints()
     }
     
-    
+    func configure(service: Service){
+        serviceImageView.image = UIImage(named: service.servicePicName)
+        serviceLabel.text = " " + service.name + " "
+    }
     
     func setupConstraints(){
         NSLayoutConstraint.activate([
-            serviceImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            serviceImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.33),
-            serviceImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.33),
-            serviceImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            serviceImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            contentView.heightAnchor.constraint(equalToConstant: 175)
         ])
         NSLayoutConstraint.activate([
-            serviceLabel.leadingAnchor.constraint(equalTo: serviceImageView.trailingAnchor, constant: 10),
-            serviceLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            serviceImageView.heightAnchor.constraint(equalToConstant: 200),
+            serviceImageView.widthAnchor.constraint(equalToConstant: 370),
+            serviceImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            serviceImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            serviceImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+        ])
+        NSLayoutConstraint.activate([
+            serviceLabel.bottomAnchor.constraint(equalTo: serviceImageView.bottomAnchor, constant: -10),
+            serviceLabel.centerXAnchor.constraint(equalTo: serviceImageView.centerXAnchor)
         ])
     }
 
@@ -49,5 +63,4 @@ class ServiceTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
