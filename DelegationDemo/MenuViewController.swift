@@ -14,10 +14,9 @@ class MenuViewController: UIViewController{
     var phone = UIButton()
     var location = UIButton()
     var welcome = UILabel()
-    var paintbrush = UIButton()
     var ourServices = UIButton()
     var yourCart = UIButton()
-    var gallery = UIButton()
+    var about = UIButton()
     var instagram = UIButton()
     var tiktok = UIButton()
     var facebook = UIButton()
@@ -39,12 +38,6 @@ class MenuViewController: UIViewController{
         location.addTarget(self, action: #selector(selectLocation), for: .touchUpInside)
         location.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(location)
-        
-        let paintbrushPic = UIImage(named: "paintbrush")
-        paintbrush.setImage(paintbrushPic, for: .normal)
-        paintbrush.addTarget(self, action: #selector(selectPaintbrush), for: .touchUpInside)
-        paintbrush.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(paintbrush)
         
         welcome.text = "Welcome!"
         welcome.font = UIFont(name: "Helvetica Light", size: 60)
@@ -76,14 +69,15 @@ class MenuViewController: UIViewController{
         view.addSubview(yourCart)
         
         let pastelGreen = UIColor(Color("PastelGreen"))
-        gallery.backgroundColor = pastelGreen
-        gallery.layer.cornerRadius = 35
-        gallery.setTitle("Gallery", for: .normal)
-        gallery.titleLabel?.font = UIFont(name: "Helvetica Light", size: 42)
-        gallery.setTitleColor(.black, for: .normal)
-        gallery.layer.borderWidth = 1
-        gallery.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(gallery)
+        about.backgroundColor = pastelGreen
+        about.layer.cornerRadius = 35
+        about.setTitle("About", for: .normal)
+        about.titleLabel?.font = UIFont(name: "Helvetica Light", size: 42)
+        about.setTitleColor(.black, for: .normal)
+        about.layer.borderWidth = 1
+        about.addTarget(self, action: #selector(selectPaintbrush), for: .touchUpInside)
+        about.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(about)
         
         let instagramIcon = UIImage(named: "instagram")
         instagram.setBackgroundImage(instagramIcon, for: .normal)
@@ -115,23 +109,15 @@ class MenuViewController: UIViewController{
         ])
         
         NSLayoutConstraint.activate([
-            location.leadingAnchor.constraint(equalTo: phone.trailingAnchor, constant: 10),
+            location.trailingAnchort.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             location.widthAnchor.constraint(equalToConstant: 40),
             location.heightAnchor.constraint(equalToConstant: 40),
             location.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
         ])
         
         NSLayoutConstraint.activate([
-            paintbrush.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            paintbrush.widthAnchor.constraint(equalToConstant: 40),
-            paintbrush.heightAnchor.constraint(equalToConstant: 40),
-            paintbrush.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-        ])
-        
-        
-        NSLayoutConstraint.activate([
             welcome.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            welcome.topAnchor.constraint(equalTo: paintbrush.bottomAnchor, constant: 15),
+            welcome.topAnchor.constraint(equalTo: location.bottomAnchor, constant: 15),
             welcome.heightAnchor.constraint(equalToConstant: 100),
             welcome.widthAnchor.constraint(equalTo: ourServices.widthAnchor)
         ])
@@ -151,20 +137,20 @@ class MenuViewController: UIViewController{
         ])
         
         NSLayoutConstraint.activate([
-            gallery.topAnchor.constraint(equalTo: yourCart.bottomAnchor, constant: 20),
-            gallery.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            gallery.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            gallery.heightAnchor.constraint(equalToConstant: 125)
+            about.topAnchor.constraint(equalTo: yourCart.bottomAnchor, constant: 20),
+            about.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            about.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            about.heightAnchor.constraint(equalToConstant: 125)
         ])
         
         NSLayoutConstraint.activate([
-            instagram.topAnchor.constraint(equalTo: gallery.bottomAnchor, constant: 40),
+            instagram.topAnchor.constraint(equalTo: about.bottomAnchor, constant: 40),
             instagram.widthAnchor.constraint(equalToConstant: 75),
             instagram.heightAnchor.constraint(equalToConstant: 75)
         ])
         
         NSLayoutConstraint.activate([
-            tiktok.topAnchor.constraint(equalTo: gallery.bottomAnchor, constant: 30),
+            tiktok.topAnchor.constraint(equalTo: about.bottomAnchor, constant: 30),
             tiktok.leadingAnchor.constraint(equalTo: instagram.trailingAnchor, constant: 10),
             tiktok.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             tiktok.widthAnchor.constraint(equalToConstant: 75),
@@ -172,7 +158,7 @@ class MenuViewController: UIViewController{
         ])
         
         NSLayoutConstraint.activate([
-            facebook.topAnchor.constraint(equalTo: gallery.bottomAnchor, constant: 40),
+            facebook.topAnchor.constraint(equalTo: about.bottomAnchor, constant: 40),
             facebook.leadingAnchor.constraint(equalTo: tiktok.trailingAnchor, constant: 10),
             facebook.widthAnchor.constraint(equalToConstant: 75),
             facebook.heightAnchor.constraint(equalToConstant: 75)
