@@ -109,7 +109,7 @@ class MenuViewController: UIViewController{
         ])
         
         NSLayoutConstraint.activate([
-            location.trailingAnchort.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            location.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             location.widthAnchor.constraint(equalToConstant: 40),
             location.heightAnchor.constraint(equalToConstant: 40),
             location.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
