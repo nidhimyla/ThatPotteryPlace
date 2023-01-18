@@ -92,6 +92,7 @@ class YourCartViewController: UIViewController, ChangeProfileInfoDelegate {
         bookAnAppointment.text = """
         Book or edit an appointment by selecting a cell below.
         Estimated Price does not include tax.
+        You will recieve a call when your appointment time is confirmed.
         """
         bookAnAppointment.textAlignment = .center
         bookAnAppointment.font = UIFont(name: "Helvetica Light", size: 15)
