@@ -10,15 +10,13 @@ import UIKit
 
 class Appointment {
     var numOfGuests: String
-    var date: String
-    var time: String
+    var dateAndTime: String
     var service: String
     var estimatedPrice: String
 
-    init(numOfGuests: String, date: String, time: String, service: String, estimatedPrice: String) {
+    init(numOfGuests: String, dateAndTime: String, service: String, estimatedPrice: String) {
         self.numOfGuests = numOfGuests
-        self.date = date
-        self.time = time
+        self.dateAndTime = dateAndTime
         self.service = service
         self.estimatedPrice = estimatedPrice
     }

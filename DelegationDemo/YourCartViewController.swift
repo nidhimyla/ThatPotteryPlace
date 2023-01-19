@@ -93,22 +93,23 @@ class YourCartViewController: UIViewController, ChangeProfileInfoDelegate {
         Book or edit an appointment by selecting a cell below.
         Estimated Price does not include tax.
         You will recieve a call when your appointment time is confirmed.
+        If a wheel throwing appointment or birthday party is booked, a deposit will be taken over the phone.
         """
         bookAnAppointment.textAlignment = .center
         bookAnAppointment.font = UIFont(name: "Helvetica Light", size: 15)
         bookAnAppointment.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bookAnAppointment)
         
-        let appointment1 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
-        let appointment2 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
-        let appointment3 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
-        let appointment4 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
-        let appointment5 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
-        let appointment6 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
-        let appointment7 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
-        let appointment8 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
-        let appointment9 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
-        let appointment10 = Appointment(numOfGuests: "0", date: "00/00", time: "00:00", service: "-", estimatedPrice: "$0")
+        let appointment1 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
+        let appointment2 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
+        let appointment3 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
+        let appointment4 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
+        let appointment5 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
+        let appointment6 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
+        let appointment7 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
+        let appointment8 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
+        let appointment9 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
+        let appointment10 = Appointment(numOfGuests: "0", dateAndTime: "00/00/00 00:00", service: "-", estimatedPrice: "$0")
         
         appointments = [appointment1, appointment2, appointment3, appointment4, appointment5, appointment6, appointment7, appointment8, appointment9, appointment10]
         

@@ -12,8 +12,7 @@ class AppointmentTableViewCell: UITableViewCell {
 
     let background = UILabel()
     let numOfGuests = UILabel()
-    let date = UILabel()
-    let time = UILabel()
+    let dateAndTime = UILabel()
     let service = UILabel()
     let estimatedPrice = UILabel()
     
@@ -36,15 +35,10 @@ class AppointmentTableViewCell: UITableViewCell {
         service.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(service)
         
-        date.font = UIFont(name: "Helvetica Light", size: 20)
-        date.adjustsFontSizeToFitWidth = true
-        date.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(date)
-        
-        time.font = UIFont(name: "Helvetica Light", size: 20)
-        time.adjustsFontSizeToFitWidth = true
-        time.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(time)
+        dateAndTime.font = UIFont(name: "Helvetica Light", size: 20)
+        dateAndTime.adjustsFontSizeToFitWidth = true
+        dateAndTime.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(dateAndTime)
         
         estimatedPrice.font = UIFont(name: "Helvetica Light", size: 20)
         estimatedPrice.adjustsFontSizeToFitWidth = true
@@ -57,8 +51,7 @@ class AppointmentTableViewCell: UITableViewCell {
     func configure(appointment: Appointment){
        
         numOfGuests.text = " " + appointment.numOfGuests + " guests."
-        date.text = " " + appointment.date
-        time.text = " " + appointment.time
+        dateAndTime.text = " " + appointment.dateAndTime + " "
         service.text = " " + appointment.service
         
         estimatedPrice.text = " Estimated Price: " + appointment.estimatedPrice
@@ -89,17 +82,12 @@ class AppointmentTableViewCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            date.topAnchor.constraint(equalTo: service.bottomAnchor, constant: 10),
-            date.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 20)
+            dateAndTime.topAnchor.constraint(equalTo: service.bottomAnchor, constant: 10),
+            dateAndTime.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 20)
         ])
         
         NSLayoutConstraint.activate([
-            time.topAnchor.constraint(equalTo: service.bottomAnchor, constant: 10),
-            time.leadingAnchor.constraint(equalTo: date.trailingAnchor, constant: 20)
-        ])
-        
-        NSLayoutConstraint.activate([
-            estimatedPrice.topAnchor.constraint(equalTo: time.bottomAnchor, constant: 10),
+            estimatedPrice.topAnchor.constraint(equalTo: dateAndTime.bottomAnchor, constant: 10),
             estimatedPrice.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 20),
             estimatedPrice.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -20)
         ])
@@ -125,12 +113,8 @@ extension AppointmentTableViewCell: ChangeAppointmentDelegate{
         self.service.text = " " + service
     }
     
-    func changeDate(date: String) {
-        self.date.text = " " + date
-    }
-    
-    func changeTime(time: String) {
-        self.time.text = " " + time
+    func changeDateAndTime(dateAndTime: String) {
+        self.dateAndTime.text = " " + dateAndTime
     }
     
     func changeEstimatedPrice(price: String) {

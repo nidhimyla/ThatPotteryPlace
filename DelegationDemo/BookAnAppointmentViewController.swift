@@ -17,8 +17,7 @@ class BookAnAppointmentViewController: UIViewController {
     var titleLabel = UILabel()
     var instruction = UILabel()
     var guestCount = UITextField()
-    var time = UITextField()
-    var date = UITextField()
+    var datePicker = UIDatePicker()
     var potteryPaintingOrMosaic = UIButton()
     var wheelThrowing = UIButton()
     var birthdayParty = UIButton()
@@ -76,25 +75,12 @@ class BookAnAppointmentViewController: UIViewController {
         guestCount.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(guestCount)
         
-        time.backgroundColor = UIColor(Color("PastelBlueLighter"))
-        time.font = UIFont(name: "Helvetica Light", size: 30)
-        time.textColor = .black
-        time.textAlignment = .center
-        time.layer.masksToBounds = true
-        time.layer.cornerRadius = 12
-        time.placeholder = " Time "
-        time.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(time)
+       
         
-        date.backgroundColor = UIColor(Color("PastelBlueLighter"))
-        date.font = UIFont(name: "Helvetica Light", size: 30)
-        date.textColor = .black
-        date.textAlignment = .center
-        date.layer.masksToBounds = true
-        date.layer.cornerRadius = 12
-        date.placeholder = " Month/Day "
-        date.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(date)
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.backgroundColor = UIColor(Color("PastelBlueLighter"))
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(datePicker)
         
         potteryPaintingOrMosaic.setTitle("Pottery Painting \n or Mosaic", for: .normal)
         potteryPaintingOrMosaic.titleLabel?.numberOfLines = 0
@@ -177,19 +163,12 @@ class BookAnAppointmentViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            time.topAnchor.constraint(equalTo: guestCount.bottomAnchor, constant: 20),
-            time.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            time.heightAnchor.constraint(equalToConstant: 60)
+            datePicker.topAnchor.constraint(equalTo: guestCount.bottomAnchor, constant: 20),
+            datePicker.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            date.topAnchor.constraint(equalTo: time.bottomAnchor, constant: 20),
-            date.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            date.heightAnchor.constraint(equalToConstant: 60)
-        ])
-        
-        NSLayoutConstraint.activate([
-            wheelThrowing.topAnchor.constraint(equalTo: date.bottomAnchor, constant: 20),
+            wheelThrowing.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 20),
             wheelThrowing.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             wheelThrowing.widthAnchor.constraint(equalToConstant: 100),
             wheelThrowing.heightAnchor.constraint(equalToConstant: 70)
@@ -251,8 +230,9 @@ class BookAnAppointmentViewController: UIViewController {
         let confirm = UIAlertAction(title: "Confirm", style: .default, handler: {(action) -> Void in
             self.delegate?.changeNumGuests(guests: self.guestCount.text ?? "0")
             self.delegate?.changeService(service: self.finalService)
-            self.delegate?.changeDate(date: self.date.text ?? "00/00")
-            self.delegate?.changeTime(time: self.time.text ?? "00:00")
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/YYYY    hh:mm"
+            self.delegate?.changeDateAndTime(dateAndTime: dateFormatter.string(from: self.datePicker.date) ?? "00/00/00 00:00")
             self.delegate?.changeEstimatedPrice(price: self.estimPricePer)
             self.dismiss(animated: true)
         })
@@ -270,7 +250,6 @@ class BookAnAppointmentViewController: UIViewController {
 protocol ChangeAppointmentDelegate: UITableViewCell{
     func changeNumGuests(guests: String)
     func changeService(service: String)
-    func changeDate(date: String)
-    func changeTime(time: String)
+    func changeDateAndTime(dateAndTime: String)
     func changeEstimatedPrice(price: String)
 }
