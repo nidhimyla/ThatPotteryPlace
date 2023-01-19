@@ -16,6 +16,7 @@ class BookAnAppointmentViewController: UIViewController {
     let appointment: Appointment
     var titleLabel = UILabel()
     var instruction = UILabel()
+    var guestCountInstructions = UILabel()
     var guestCount = UITextField()
     var datePicker = UIDatePicker()
     var potteryPaintingOrMosaic = UIButton()
@@ -65,6 +66,15 @@ class BookAnAppointmentViewController: UIViewController {
         instruction.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(instruction)
         
+        guestCountInstructions.text = "Pottery Painting, Mosaic, and Wheel Appointments can have a maximum of 7 guests. Birthday parties must have at least 8 guests and at most 20 guests."
+        guestCountInstructions.font = UIFont(name: "Helvetica Light", size: 15)
+        guestCountInstructions.textAlignment = .center
+        guestCountInstructions.textColor = .gray
+        guestCountInstructions.numberOfLines = 0
+        guestCountInstructions.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(guestCountInstructions)
+        
+        
         guestCount.backgroundColor = UIColor(Color("PastelBlueLighter"))
         guestCount.font = UIFont(name: "Helvetica Light", size: 30)
         guestCount.textColor = .black
@@ -74,7 +84,6 @@ class BookAnAppointmentViewController: UIViewController {
         guestCount.placeholder = " # of Guests "
         guestCount.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(guestCount)
-        
        
         
         datePicker.datePickerMode = .dateAndTime
@@ -157,7 +166,14 @@ class BookAnAppointmentViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            guestCount.topAnchor.constraint(equalTo: instruction.bottomAnchor, constant: 50),
+            guestCountInstructions.topAnchor.constraint(equalTo: instruction.bottomAnchor, constant: 50),
+            guestCountInstructions.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            guestCountInstructions.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            guestCountInstructions.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10)
+        ])
+        
+        NSLayoutConstraint.activate([
+            guestCount.topAnchor.constraint(equalTo: guestCountInstructions.bottomAnchor, constant: 20),
             guestCount.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             guestCount.heightAnchor.constraint(equalToConstant: 60)
         ])
